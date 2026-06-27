@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Embabi Platform
 
-## Getting Started
+Embabi Platform is a premium, modular digital experience for education, creativity, and knowledge-driven interaction. The project is built with Next.js App Router, Tailwind CSS, and a modular architecture designed for future expansion.
 
-First, run the development server:
+## Overview
+
+The platform currently includes:
+- Authentication flow (login, sign-up, recovery, confirmation)
+- Protected dashboard
+- Kids Hub for educational content
+- Media Studio for creative showcases
+- Knowledge Engine for structured knowledge and interest portals
+- Debate Arena for guided discussion experiences
+- About and Terms & Privacy pages for public information
+
+## Tech Stack
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+
+## Local Development
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+3. Open the app at:
+   - http://localhost:3000
+
+## Production Build
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Copy the example file and configure values as needed:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+cp .env.example .env.local
+```
 
-## Learn More
+### Example variables
+- NEXT_PUBLIC_APP_NAME
+- NEXT_PUBLIC_APP_URL
+- NEXT_PUBLIC_API_BASE_URL
+- API_SECRET_KEY
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment Notes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is prepared for deployment on Vercel. The repository is compatible with the standard Vercel build flow using:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run build
+```
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- src/app - route-level pages
+- src/modules - modular feature areas
+- src/services - mock service layer ready for backend integration
+- src/lib - shared utilities and security helpers
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Notes
+
+The current implementation uses mock services and a temporary authentication cookie for the protected dashboard experience. These can be replaced with real backend/API integration in the next phase.
